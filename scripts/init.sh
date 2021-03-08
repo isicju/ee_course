@@ -7,7 +7,7 @@ apt install git -y
 #updating repositories
 apt-get update
 #installing tools before fetching docker
-apt-get install apt-transport-https ca-certificates curl  gnupg - y
+apt-get install apt-transport-https ca-certificates curl  gnupg -y
 
 #installing more tools before installing docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
