@@ -1,0 +1,2 @@
+  <role rolename="admin-gui" />
+  <user username="admin" password="Ghbdtn123" roles="manager-gui,admin-gui" />
