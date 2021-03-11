@@ -19,4 +19,5 @@ mysql -u root
 wget https://apache-mirror.rbc.ru/pub/apache/tomcat/tomcat-8/v8.5.63/bin/apache-tomcat-8.5.63.tar.gz
 tar -xf apache-tomcat-8.5.63.tar.gz
 cd apache-tomcat-8.5.63/conf
-## vim tomcat-users.xml and add admin roles (tomcat.xml)
+## vim tomcat-users.xml and add admin roles (tomcat-users.xml)
+cd  /webapps/manager/META-INF/context.xml comment Valve tag
