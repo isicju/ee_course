@@ -2,8 +2,10 @@ package com.course.nakedhttp;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URI;
+import java.net.URL;
 import java.nio.file.Files;
 
 import com.sun.net.httpserver.Headers;
@@ -13,21 +15,17 @@ import com.sun.net.httpserver.HttpHandler;
 @SuppressWarnings("restriction")
 public class StaticFileHandler implements HttpHandler {
 
-  private final String baseDir;
-
-  public StaticFileHandler(String baseDir) {
-    this.baseDir = baseDir;
+  public StaticFileHandler() {
   }
 
   @Override
   public void handle(HttpExchange ex) throws IOException {
     URI uri = ex.getRequestURI();
-
-
     String name = new File(uri.getPath()).getName();
+    ClassLoader classLoader = getClass().getClassLoader();
+    URL inputStream = classLoader.getResource(name);
 
-
-    File path = new File(baseDir, name);
+    File path = new File(inputStream.getPath());
 
     Headers h = ex.getResponseHeaders();
     h.add("Content-Type", "text/html");
