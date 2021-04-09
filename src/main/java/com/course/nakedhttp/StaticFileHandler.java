@@ -24,8 +24,8 @@ public class StaticFileHandler implements HttpHandler {
     String name = new File(uri.getPath()).getName();
     ClassLoader classLoader = getClass().getClassLoader();
     URL inputStream = classLoader.getResource(name);
-
-    File path = new File(inputStream.getPath());
+    String pathForJar = inputStream.getPath().replaceAll("!", "");
+    File path = new File(pathForJar);
 
     Headers h = ex.getResponseHeaders();
     h.add("Content-Type", "text/html");
