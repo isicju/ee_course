@@ -21,6 +21,7 @@ public class StaticFileHandler implements HttpHandler {
   @Override
   public void handle(HttpExchange ex) throws IOException {
     URI uri = ex.getRequestURI();
+    System.out.println("userdir" +  System.getProperty("user.dir"));
     String name = new File(uri.getPath()).getName();
     ClassLoader classLoader = getClass().getClassLoader();
     URL inputStream = classLoader.getResource(name);
