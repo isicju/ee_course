@@ -22,7 +22,7 @@ public class StaticFileHandler implements HttpHandler {
   public void handle(HttpExchange ex) throws IOException {
     URI uri = ex.getRequestURI();
     String name = new File(uri.getPath()).getName();
-    File path = new File(System.getProperty("user.dir") + "target/classes/" + name);
+    File path = new File(System.getProperty("user.dir") + "/target/classes/" + name);
     Headers h = ex.getResponseHeaders();
     h.add("Content-Type", "text/html");
 
