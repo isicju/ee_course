@@ -10,10 +10,13 @@ public class TCPServerWithHttpRequest {
         ServerSocket serverSocket = new ServerSocket(8282);
         Socket clientSocket = serverSocket.accept();
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-        String line;
-        while (!(line = in.readLine()).isEmpty() ) {
-            System.out.println(line);
+        int value = 0;
+        while (in.ready()) {
+            value = in.read();
+            char char1 = (char) value;
+            System.out.print(char1);
         }
+        System.out.println("DONE");
         in.close();
         clientSocket.close();
         serverSocket.close();
