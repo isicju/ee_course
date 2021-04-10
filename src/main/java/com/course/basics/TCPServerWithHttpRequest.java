@@ -16,7 +16,6 @@ public class TCPServerWithHttpRequest {
             char char1 = (char) value;
             System.out.print(char1);
         }
-        System.out.println("DONE");
         in.close();
         clientSocket.close();
         serverSocket.close();
