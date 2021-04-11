@@ -1,0 +1,5 @@
+curl --request POST \
+  --url http://localhost:8282/ \
+  --header 'Content-Type: application/json' \
+  --header 'myheader: myheadervalue' \
+  --data '{"data":"data"}'
