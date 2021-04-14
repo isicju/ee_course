@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #updating repositories
 apt-get update
 #installing jdk
