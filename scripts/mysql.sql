@@ -1,3 +1,0 @@
-CREATE USER 'myuser'@'%' IDENTIFIED BY 'secret_password';
-GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
