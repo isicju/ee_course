@@ -21,7 +21,7 @@ public class SimpleHttpServer {
   void start() throws IOException {
     System.out.println("Server has started..");
     server = HttpServer.create(new InetSocketAddress(PORT), 0);
-    server.createContext("/static", new StaticFileHandler());
+    server.createContext("", new StaticFileHandler());
     server.start();
   }
 
